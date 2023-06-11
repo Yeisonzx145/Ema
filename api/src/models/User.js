@@ -10,6 +10,20 @@ module.exports = (sequelize)=>{
         name:{
             type:DataTypes.STRING,
             allowNull:false
+        },
+        lastname:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        password:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        avatar:{
+            type:DataTypes.STRING
+        },
+        rol:{
+            type:DataTypes.ENUM('STUDEN','INSTRUCTOR','ADMIN')
         }
     });
 }
