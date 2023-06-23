@@ -1,5 +1,5 @@
 import {Box, Button } from "@mui/material"
-
+import {Link} from 'react-router-dom'
 const SingInButtons = () =>{
     return (
         <Box style={{
@@ -9,10 +9,10 @@ const SingInButtons = () =>{
             width:'30%',
             bgcolor:"red"
         }}>
-            <Button variant="outlined">
+            <Button variant="outlined" component={Link} to={"/Login"} >
                 Iniciar Seccion
             </Button>
-            <Button variant="contained">
+            <Button variant="contained" component={Link} to={'/SignupUsuario'}>
                 Registrate
             </Button>
         </Box>

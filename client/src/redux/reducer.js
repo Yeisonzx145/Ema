@@ -1,9 +1,13 @@
+import {LOGING} from './actions'
+
 const initialState = {
-    users:[],
+    user:{},
 };
 
 const rootReducer = (state = initialState, action) =>{
     switch(action.type){
+        case LOGING:
+            return {...state, user:action.payload}
         default:
             return{...state};
     }

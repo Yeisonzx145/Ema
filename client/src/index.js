@@ -13,17 +13,6 @@ import theme from "./componets/Layout";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store} >
-    <div
-      style={{
-        height: "100vh",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        scrollBehavior: "smooth",
-      }}
-    ></div>
     <BrowserRouter>
     <ThemeProvider theme={theme}>
       <App />
