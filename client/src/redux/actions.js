@@ -13,9 +13,9 @@ export const logingSection = (email,password)=>{
 }
 
 export const signuUser = (user) =>{
+    const data = user
     return async function (dispatch){
-        console.log(user);
-        const response = await axios.post(`${URL}/user`,user)
+        const response = await axios.post(`${URL}/user`,data)
         const user = response.data
         return dispatch({type:SIGNU_USER, payload:user})
     }

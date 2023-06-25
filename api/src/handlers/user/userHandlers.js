@@ -2,6 +2,7 @@ const userPostController = require('../../controllers/user/userPostController')
 
 const userPost = async (req,res)=>{
     const {name,lastname,email,password} = req.body
+    console.log(req.body);
     try {
         const response = await userPostController(name,lastname,email,password)
         res.status(200).json(response)

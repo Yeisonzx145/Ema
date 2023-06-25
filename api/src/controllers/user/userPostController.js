@@ -3,4 +3,4 @@ const userPostController = (name,lastname,email,passwprd)=>{
         name,lastname,email,passwprd
     }
 }
-module.export = userPostController;
+module.exports = userPostController;

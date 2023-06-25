@@ -32,8 +32,8 @@ const SignupUsuario = ()=>{
 
     const handleSubmit = (event)=>{
         event.preventDefault();
-        //dispatch(signuUser(user))
-        axios.post('http://localhost:3001/user',user).then(res=>console.log(res.data))
+        dispatch(signuUser(user))
+        
     }
 
     return (

@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 
 const userFuntion = require('./models/User')
+const instructorFunction = require('./models/Instructor')
 
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB, DB_PORT } = process.env;
@@ -15,8 +16,9 @@ const sequelize = new Sequelize(
   );
 
   userFuntion(sequelize)
+  instructorFunction(sequelize)
 
-  const {User} = sequelize.models;
+  const {User,Instructor} = sequelize.models;
 
   module.exports = {
     sequelize,
