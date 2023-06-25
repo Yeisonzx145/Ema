@@ -3,7 +3,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import { useState } from "react";
 import validation from "./validation";
 import { useDispatch, useSelector } from "react-redux";
-import { LOGING } from "../../redux/actions";
+import { logingSection } from "../../redux/actions";
 
 const Login = ()=>{
 
@@ -27,7 +27,7 @@ const Login = ()=>{
     }
     const handleSubmit = (event) =>{
         event.preventDefault();
-        dispatch(LOGING(user.email,user.password))
+        dispatch(logingSection(user.email,user.password))
 
         
     }
@@ -61,6 +61,10 @@ const Login = ()=>{
             }
 
             <Button variant="outlined" startIcon={<GoogleIcon />}>Iniciar con google</Button>
+
+            <div>
+                <Typography variant="p">¿Aun no tienes una cuenta? <Typography component="a" variant="p" href="/SignupUsuario" color="secondary">Registrate</Typography></Typography>
+            </div>
             
         </form>
     );

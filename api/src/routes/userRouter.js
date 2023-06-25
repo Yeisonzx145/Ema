@@ -1,7 +1,8 @@
 const { Router } = require("express");
-
 const userRouter = Router();
 
-userRouter.get('/',(req,res)=>{})
+const {userPost} = require('../handlers/user/userHandlers')
+
+userRouter.post('/', userPost)
 
 module.exports = userRouter;
