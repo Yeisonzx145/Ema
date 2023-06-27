@@ -1,5 +1,7 @@
 const instructorGetControllers = require('../../controllers/instructor/instructorGetControllers')
 const instructorPostControlleres = require('../../controllers/instructor/instructorPostControlleres')
+const getInstructorId = require('../../controllers/instructor/getInstructorId')
+
 const instructorGet = async (req,res) =>{
     try {
         const response = await instructorGetControllers();
@@ -19,4 +21,14 @@ const instructorPost = async (req,res)=>{
     }
 }
 
-module.exports={instructorGet,instructorPost}
+const instructorDetail = async (req,res)=>{
+    const {id} = req.params
+    try {
+        const response = await getInstructorId(id);
+        res.status(200).json(response)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+}
+
+module.exports={instructorGet,instructorPost,instructorDetail}

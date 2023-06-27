@@ -1,6 +1,15 @@
 import { AppBar, Box, Typography } from "@mui/material"
 import SingInButtons from "../../componets/NavSection/SinginButtons"
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { instructorGet } from "../../redux/actions";
+
 const Nav = ()=>{
+
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(instructorGet())
+    },[dispatch])
     return(
         <Box component="div" sx={{p:2,m:2,position:'relative',height:20}}>
             <AppBar elevation={0} sx={{with:1,height:1,position:'absolute',bgcolor:"transparent"}}>

@@ -4,7 +4,6 @@ import GoogleIcon from '@mui/icons-material/Google';
 import validationSignup from './validationSignup'
 import { useDispatch } from "react-redux";
 import { signuUser } from "../../redux/actions";
-import axios from "axios";
 
 const SignupUsuario = ()=>{
 

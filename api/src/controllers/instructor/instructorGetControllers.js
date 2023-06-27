@@ -1,6 +1,6 @@
-const {Intructor} = require('../../db')
+const {Instructor} = require('../../db')
 const instructorGetControllers = async ()=>{
-    const response = await Intructor.findALl()
+    const response = await Instructor.findAll()
     return response
 }
 module.exports = instructorGetControllers;
