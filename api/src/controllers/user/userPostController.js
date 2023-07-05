@@ -11,7 +11,7 @@ const userPostController = async (name,lastname,email,password)=>{
     
     if(!expresionEmail.test(email)) throw new Error('invalid email format')
     
-    const createUser = await User.create({name,lastname,email,password})
+    const createUser = await User.create({name,lastname,email,password,role:'STUDEN',asset:true})
 
     return createUser;
 }

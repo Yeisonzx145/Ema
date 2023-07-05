@@ -15,12 +15,11 @@ export const logingSection = (email,password)=>{
     }
 }
 
-export const signuUser = (user) =>{
-    const data = user
+export const signuUser = () =>{
     return async function (dispatch){
-        const response = await axios.post(`${URL}/user`,data)
-        const user = response.data
-        return dispatch({type:SIGNU_USER, payload:user})
+        const id = localStorage.getItem('idUser')
+        const response = await axios.get(`${URL}/user/${id}`)
+        dispatch({type:SIGNU_USER, payload:response.data})
     }
 }
 

@@ -2,12 +2,9 @@ import { Button, Typography } from "@mui/material";
 import { useState } from "react";
 import GoogleIcon from '@mui/icons-material/Google';
 import validationSignup from './validationSignup'
-import { useDispatch } from "react-redux";
-import { signuUser } from "../../redux/actions";
+import registerUser from './registerUser'
 
 const SignupUsuario = ()=>{
-
-    const dispatch = useDispatch();
 
     const [user,setUser] = useState({
         name:'',
@@ -31,8 +28,13 @@ const SignupUsuario = ()=>{
 
     const handleSubmit = (event)=>{
         event.preventDefault();
-        dispatch(signuUser(user))
-        
+        registerUser(user)
+        setUser({
+            name:'',
+            lastname:'',
+            email:'',
+            password:''
+        })
     }
 
     return (

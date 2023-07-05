@@ -26,8 +26,13 @@ module.exports = (sequelize)=>{
         avatar:{
             type:DataTypes.STRING
         },
-        rol:{
+        role:{
             type:DataTypes.ENUM('STUDEN','INSTRUCTOR','ADMIN')
+        },
+        asset: {
+          type: DataTypes.BOOLEAN,
+          default: true,
+          allowNull: false,
         }
     });
 }
