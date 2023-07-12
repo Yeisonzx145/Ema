@@ -6,14 +6,15 @@ import { useEffect } from "react";
 import { instructorGet, signuUser } from "../../redux/actions";
 
 const Nav = ()=>{
-
+    //localStorage.setItem("idUser",0);
+    const idUser = localStorage.getItem('idUser')
+    //localStorage('idUser',0)
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(instructorGet())
-        dispatch(signuUser())
+        dispatch(signuUser(idUser))
     },[dispatch])
 
-    const idUser = localStorage.getItem('idUser')
 
     return(
         <Box component="div" sx={{p:2,m:2,position:'relative',height:20}}>
@@ -23,7 +24,7 @@ const Nav = ()=>{
                 }}>Ema</Typography>
 
                 {
-                    !idUser ? <SingInButtons/> : <Profiler/>
+                    idUser === '0' ? <SingInButtons/> : <Profiler/>
                 }
                 
 

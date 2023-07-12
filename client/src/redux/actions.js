@@ -6,6 +6,7 @@ export const SIGNU_USER = "SIGNU_USER";
 export const INSTRUNCTOR_GET = "INSTRUNCTOR_GET"
 export const INSTRUNCTOR_DETAIL = "INSTRUNCTOR_DETAIL"
 export const CLEAR_DETAIL = "CLEAR_DETAIL"
+export const USER_CLEAR = "USER_CLEAR"
 
 export const logingSection = (email,password)=>{
     return async function (dispatch){
@@ -15,11 +16,14 @@ export const logingSection = (email,password)=>{
     }
 }
 
-export const signuUser = () =>{
+export const signuUser = (id) =>{
     return async function (dispatch){
-        const id = localStorage.getItem('idUser')
-        const response = await axios.get(`${URL}/user/${id}`)
-        dispatch({type:SIGNU_USER, payload:response.data})
+        if(id === '0'){
+            return {type:USER_CLEAR}
+        }else{
+            const response = await axios.get(`${URL}/user/${id}`)
+            dispatch({type:SIGNU_USER, payload:response.data})
+        }
     }
 }
 

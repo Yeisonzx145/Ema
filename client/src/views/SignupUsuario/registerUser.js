@@ -6,7 +6,7 @@ export default async function registerUser (data){
     axios.post(`${URL}/user`,data)
         .then((response)=>{
             localStorage.setItem("idUser",response.data.id);
-            window.location.href = '/'
+            window.location.href = '/students'
         })
         .catch((error)=>{
             const objetojson = error.request.response;
